@@ -3,8 +3,8 @@
 	import "@app/styles/tailwindcss.css"
 
 	import {DefaultLayout} from "@widgets/layout/default";
-	import {Header} from "@widgets/header/ui";
-	import {Footer} from "@widgets/footer/ui";
+	import {Header} from "@widgets/header";
+	import {Footer} from "@widgets/footer";
 
 	let { children } = $props();
 </script>
