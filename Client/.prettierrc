@@ -1,7 +1,16 @@
 {
+	"tabWidth": 4,
 	"useTabs": true,
-	"singleQuote": true,
+	"semi": true,
+	"singleQuote": false,
+	"jsxSingleQuote": false,
+	"quoteProps": "as-needed",
+	"jsxBracketSameLine": false,
+	"arrowParens": "always",
 	"trailingComma": "none",
+	"bracketSpacing": true,
+	"vueIndentScriptAndStyle": true,
+	"endOfLine": "auto",
 	"printWidth": 100,
 	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
 	"overrides": [
