@@ -13,6 +13,9 @@
 		height?: number;
 		screenLargeWidth?: number;
 		screenLargeHeight?: number;
+		textSize?: number;
+		textWeight?: number;
+		screenLargeTextSize?: number;
 		screenLargeBorderThickness?: number;
 		type?: "ghost" | "solid";
 		shape?: "pill" | "rectangle";
@@ -30,7 +33,10 @@
 		borderColor = "#ff52c1",
 		borderHoverColor="#ff8ed7",
 		width = 80,
+		textWeight = 400,
 		height = 23,
+		textSize = 9,
+		screenLargeTextSize = 16,
 		screenLargeWidth = width * 2,
 		screenLargeHeight = height * 2,
 		type="ghost",
@@ -44,21 +50,21 @@
 
 {#if type === "ghost"}
 	{#if shape === "pill"}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
 			{@render children()}
 		</button>
 	{:else}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
 			{@render children()}
 		</button>
 	{/if}
 {:else}
 	{#if shape === "pill"}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
 			{@render children()}
 		</button>
 	{:else}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
 			{@render children()}
 		</button>
 	{/if}
