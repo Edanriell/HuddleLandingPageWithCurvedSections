@@ -8,13 +8,16 @@
 		bgHoverColor?: string;
 		borderThickness?: number;
 		borderColor?: string;
+		borderHoverColor?: string;
 		width?: number;
 		height?: number;
 		screenLargeWidth?: number;
 		screenLargeHeight?: number;
+		screenLargeBorderThickness?: number;
 		type?: "ghost" | "solid";
 		shape?: "pill" | "rectangle";
 		shadow?: string;
+		hoverShadow?: string;
 		children: Snippet;
 	}
 
@@ -25,34 +28,37 @@
 		bgHoverColor = "transparent",
 		borderThickness = 0.6,
 		borderColor = "#ff52c1",
+		borderHoverColor="#ff8ed7",
 		width = 80,
 		height = 23,
 		screenLargeWidth = width * 2,
 		screenLargeHeight = height * 2,
 		type="ghost",
 		shape="pill",
-		shadow = "0_0_9rem_0_rgba(255,82,193,0.22)",
+		screenLargeBorderThickness=1,
+		shadow = "0_0_5rem_0_rgba(255,82,193,0.22)",
+		hoverShadow = "0_0_9rem_0_rgba(255,82,193,0.22)",
 		children
 	}:Props = $props();
 </script>
 
 {#if type === "ghost"}
 	{#if shape === "pill"}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] border-[{borderThickness}rem] border-solid border-[{borderColor}] shadow-[{shadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
 			{@render children()}
 		</button>
 	{:else}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] border-[{borderThickness}rem] border-solid border-[{borderColor}] shadow-[{shadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
 			{@render children()}
 		</button>
 	{/if}
 {:else}
 	{#if shape === "pill"}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] shadow-[{shadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
 			{@render children()}
 		</button>
 	{:else}
-		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] shadow-[{shadow}]">
+		<button type="button" class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}]">
 			{@render children()}
 		</button>
 	{/if}
