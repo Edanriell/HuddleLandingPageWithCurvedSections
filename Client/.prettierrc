@@ -8,16 +8,17 @@
 	"jsxBracketSameLine": false,
 	"arrowParens": "always",
 	"trailingComma": "none",
-	"bracketSpacing": true,
 	"vueIndentScriptAndStyle": true,
 	"endOfLine": "auto",
 	"printWidth": 100,
+	"bracketSpacing": true,
 	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
 	"overrides": [
 		{
 			"files": "*.svelte",
 			"options": {
-				"parser": "svelte"
+				"parser": "svelte",
+				"bracketSpacing": true
 			}
 		}
 	]
