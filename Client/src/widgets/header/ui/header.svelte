@@ -17,9 +17,11 @@
 				href="/"
 				screenLargeBorderThickness={1}
 				screenLargeHeight={40}
+				screenLargeTextSize={16}
 				screenLargeWidth={136}
 				shadow="0_0_5rem_0_rgba(255,82,193,0.22)"
 				shape="rectangle"
+				textSize={9}
 				type="ghost"
 				width={80}
 		>Try It Free</Link>
