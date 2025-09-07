@@ -22,7 +22,9 @@
 		shape?: "pill" | "rectangle";
 		shadow?: string;
 		hoverShadow?: string;
+		classes?: string;
 		children: Snippet;
+		[key: string]: unknown;
 	}
 
 	let {
@@ -46,27 +48,29 @@
 		screenLargeBorderThickness=1,
 		shadow = "0_0_5rem_0_rgba(255,82,193,0.22)",
 		hoverShadow = "0_0_9rem_0_rgba(255,82,193,0.22)",
-		children
+		classes = "",
+		children,
+		...restProps
 	}:Props = $props();
 </script>
 
 {#if type === "ghost"}
 	{#if shape === "pill"}
-		<a href={href} class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
+		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
 			{@render children()}
 		</a>
 	{:else}
-		<a href={href} class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
+		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
 			{@render children()}
 		</a>
 	{/if}
 {:else}
 	{#if shape === "pill"}
-		<a href={href} class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
+		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
 			{@render children()}
 		</a>
 	{:else}
-		<a href={href} class="text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem]">
+		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
 			{@render children()}
 		</a>
 	{/if}
