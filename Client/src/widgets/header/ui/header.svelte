@@ -13,14 +13,14 @@
 				color="#ff52c1"
 				height={23}
 				hoverColor="#ff8ed7"
-				hoverShadow="0_0_9rem_0_rgba(255,82,193,0.22)"
+				hoverShadow="0 0 9rem 0 rgba(255,82,193,0.22)"
 				href="/"
 				screenLargeBorderThickness={1}
 				screenLargeHeight={40}
 				screenLargeTextSize={16}
 				screenLargeWidth={136}
-				shadow="0_0_5rem_0_rgba(255,82,193,0.22)"
-				shape="rectangle"
+				shadow="0 0 5rem 0 rgba(255,82,193,0.22)"
+				shape="pill"
 				textSize={9}
 				type="ghost"
 				width={80}

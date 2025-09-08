@@ -46,32 +46,124 @@
 		type="ghost",
 		shape="pill",
 		screenLargeBorderThickness=1,
-		shadow = "0_0_5rem_0_rgba(255,82,193,0.22)",
-		hoverShadow = "0_0_9rem_0_rgba(255,82,193,0.22)",
+		shadow = "0 0 5rem 0 rgba(255,82,193,0.22)",
+		hoverShadow = "0 0 9rem 0 rgba(255,82,193,0.22)",
 		classes = "",
 		children,
 		...restProps
 	}:Props = $props();
+
+	const dynamicStyles = $derived(`
+		--link-color: ${color};
+		--link-hover-color: ${hoverColor};
+		--link-bg: ${bgColor};
+		--link-bg-hover: ${bgHoverColor};
+		--link-border-color: ${borderColor};
+		--link-border-hover-color: ${borderHoverColor};
+		--link-border-width: ${borderThickness}rem;
+		--link-border-width-large: ${screenLargeBorderThickness}rem;
+		--link-width: ${width}rem;
+		--link-height: ${height}rem;
+		--link-width-large: ${screenLargeWidth}rem;
+		--link-height-large: ${screenLargeHeight}rem;
+		--link-text-size: ${textSize}rem;
+		--link-text-size-large: ${screenLargeTextSize}rem;
+		--link-font-weight: ${textWeight};
+		--link-shadow: ${shadow};
+		--link-hover-shadow: ${hoverShadow};
+	`);
 </script>
+
+<style>
+	.link {
+		font-family: var(--font-family);
+		border-style: solid;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		text-decoration: none;
+
+		/* Apply dynamic styles */
+		color: var(--link-color);
+		background-color: var(--link-bg);
+		border-color: var(--link-border-color);
+		border-width: var(--link-border-width);
+		width: var(--link-width);
+		height: var(--link-height);
+		font-size: var(--link-text-size);
+		font-weight: var(--link-font-weight);
+		box-shadow: var(--link-shadow);
+	}
+
+	.link:hover {
+		color: var(--link-hover-color);
+		background-color: var(--link-bg-hover);
+		border-color: var(--link-border-hover-color);
+		box-shadow: var(--link-hover-shadow);
+	}
+
+	.link--shape--pill {
+		border-radius: 12rem;
+	}
+
+	.link--shape--rectangle {
+		border-radius: 5rem;
+	}
+
+	@media (min-width: 1440px) {
+		.link {
+			width: var(--link-width-large);
+			height: var(--link-height-large);
+			font-size: var(--link-text-size-large);
+			border-width: var(--link-border-width-large);
+		}
+
+		.link--shape--pill {
+			border-radius: 20rem;
+		}
+	}
+</style>
 
 {#if type === "ghost"}
 	{#if shape === "pill"}
-		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
+		<a
+				{href}
+				class="link link--shape--pill {classes}"
+				style={dynamicStyles}
+				{...restProps}
+		>
 			{@render children()}
 		</a>
-	{:else}
-		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] border-[{borderThickness}rem] desktop:border-[{screenLargeBorderThickness}rem] border-solid border-[{borderColor}] hover:border-[{borderHoverColor}] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
+	{:else} 
+		<a
+				{href}
+				class="link link--shape--rectangle {classes}"
+				style={dynamicStyles}
+				{...restProps}
+		>
 			{@render children()}
 		</a>
 	{/if}
 {:else}
 	{#if shape === "pill"}
-		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[12rem] desktop:rounded-[20rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
+		<a
+				{href}
+				class="link link--shape--pill {classes}"
+				style={dynamicStyles}
+				{...restProps}
+		>
 			{@render children()}
 		</a>
 	{:else}
-		<a href={href} {...restProps} class="font-[var(--font-family)] text-[{color}] hover:text-[{hoverColor}] w-[{width}rem] h-[{height}rem] desktop:w-[{screenLargeWidth}rem] desktop:h-[{screenLargeHeight}rem] bg-[{bgColor}] hover:bg-[{bgHoverColor}] rounded-[5rem] desktop:rounded-[5rem] shadow-[{shadow}] hover:shadow-[{hoverShadow}] text-[{textSize}rem] desktop:text-[{screenLargeTextSize}rem] font-[{textWeight}rem] {classes}">
+		<a
+				{href}
+				class="link link--shape--rectangle {classes}"
+				style={dynamicStyles}
+				{...restProps}
+		>
 			{@render children()}
 		</a>
 	{/if}
-{/if}
+{/if} 
