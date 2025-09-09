@@ -5,14 +5,14 @@
 	import {Newsletter} from "@shared/ui/newsletter";
 </script>
 
-<footer class="bg-[#00252e]">
-	<div>
-		<Logotype colorScheme="Light" />
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia vestibulum a, ultrices quis sem.</p>
+<footer class="bg-[#00252e] flex flex-col-reverse pt-[108rem] pb-[46rem] gap-y-[104rem]">
+	<div class="ml-[28rem] mr-[28rem]">
+		<Logotype class="relative mb-[16rem] block" colorScheme="Light" />
+		<p class="font-[var(--font-family)] font-semibold text-[14rem] leading-[171%] text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia vestibulum a, ultrices quis sem.</p>
 		<Contacts />
-		<SocialLinks />
+		<SocialLinks classes="ml-[-3rem]" />
 	</div>
-	<div>
+	<div class="ml-[28rem] mr-[28rem]">
 		<Newsletter />
 	</div>
 </footer>
