@@ -1,7 +1,16 @@
-<script>
+<script lang="ts">
+	interface Props {
+		classes?: string;
+		[key: string]: unknown;
+	}
+
+	let {
+		classes = "",
+		...restProps
+	}:Props = $props();
 </script>
 
-<ul class="flex flex-row items-start gap-x-[13rem] mt-[48rem] desktop:mt-[80rem]">
+<ul {...restProps} class="flex flex-row items-start gap-x-[14rem] mt-[48rem] desktop:mt-[80rem] {classes}">
 	<li class="relative">
 		<span class="visually-hidden">Facebook</span>
 		<a aria-label="Follow us on Facebook" href="/">
