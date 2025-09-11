@@ -9,6 +9,8 @@
 		borderThickness?: number;
 		borderColor?: string;
 		borderHoverColor?: string;
+		borderRadius?: number;
+		screenLargeBorderRadius?: number;
 		width?: number;
 		height?: number;
 		screenLargeWidth?: number;
@@ -39,6 +41,8 @@
 		textWeight = 400,
 		height = 23,
 		textSize = 9,
+		borderRadius = 12,
+		screenLargeBorderRadius = 20,
 		screenLargeTextSize = 16,
 		screenLargeWidth = width * 2,
 		screenLargeHeight = height * 2,
@@ -71,6 +75,8 @@
 		--link-font-weight: ${textWeight};
 		--link-shadow: ${shadow};
 		--link-hover-shadow: ${hoverShadow};
+		--link-border-radius: ${borderRadius}rem;
+		--link-border-radius-large: ${screenLargeBorderRadius}rem;
 	`);
 </script>
 
@@ -105,7 +111,7 @@
 	}
 
 	.link--shape--pill {
-		border-radius: 12rem;
+		border-radius: var(--link-border-radius);
 	}
 
 	.link--shape--rectangle {
@@ -121,7 +127,7 @@
 		}
 
 		.link--shape--pill {
-			border-radius: 20rem;
+			border-radius: var(--link-border-radius-large);
 		}
 	}
 </style>

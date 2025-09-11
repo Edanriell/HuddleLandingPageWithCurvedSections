@@ -1,10 +1,8 @@
-<!--<script>-->
-<!--	import {HeroWidget} from "@widgets/hero/ui";-->
-<!--	import {FeaturesWidget} from "@widgets/features/ui";-->
-<!--	import {ActionsWidget} from "@widgets/actions/ui";-->
-<!--</script>-->
+<script lang="ts">
+	import {HeroWidget} from "@widgets/hero/ui";
+</script>
 
-<!--<HeroWidget />-->
+<HeroWidget />
 <!--<StatisticsWidget />-->
 <!--<FeaturesWidget />-->
 <!--<ActionsWidget />-->
