@@ -1,1 +1,1 @@
-export { default as StatisticsWidget } from "./statistics-widget.svelte";
+export { default as Statistics } from "./statistics.svelte";

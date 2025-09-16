@@ -1,9 +1,9 @@
 <script lang="ts">
-	import {HeroWidget} from "@widgets/hero";
-	import {StatisticsWidget} from "@widgets/statistics";
+	import {Hero} from "@widgets/hero";
+	import {Statistics} from "@widgets/statistics";
+	import {Features} from "@widgets/features";
 </script>
 
-<HeroWidget />
-<StatisticsWidget />
-<!--<FeaturesWidget />-->
-<!--<ActionsWidget />-->
+<Hero />
+<Statistics />
+<Features />
