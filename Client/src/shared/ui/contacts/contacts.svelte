@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <address class="relative mt-[40rem] desktop:mt-[24rem]">
 	<dl class="relative flex flex-col gap-y-[16rem]">
 		<div class="flex flex-row justify-start items-center gap-x-[19rem]">

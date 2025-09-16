@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type {Snippet} from "svelte";
 
 	interface Props {
 		color?: string;
@@ -23,7 +22,7 @@
 		hoverShadow?: string;
 		buttonType?: "button" | "submit" | "reset";
 		classes?: string;
-		children: Snippet;
+		children: import('svelte').Snippet;
 		[key: string]: unknown;
 	}
 

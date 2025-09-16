@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {Link} from "@shared/ui/link";
 
-	import {default as HeroWidgetIllustration} from "./hero-widget-illustration.svelte";
+	import {default as HeroIllustration} from "./hero-illustration.svelte";
 </script>
 
 <section class="relative pr-[40rem] pl-[40rem] mt-[88rem] desktop:pr-[212rem] desktop:pl-[212rem] desktop:mt-[147rem]">
@@ -28,5 +28,5 @@
 			type="solid"
 			width={200}
 	>Get Started For Free</Link>
-	<HeroWidgetIllustration />
+	<HeroIllustration />
 </section>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type {Snippet} from "svelte";
 
 	interface Props {
 		color?: string;
@@ -25,7 +24,7 @@
 		shadow?: string;
 		hoverShadow?: string;
 		classes?: string;
-		children: Snippet;
+		children: import('svelte').Snippet;
 		[key: string]: unknown;
 	}
 

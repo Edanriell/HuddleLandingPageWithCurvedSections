@@ -10,7 +10,8 @@ const config = {
 			"@pages": "src/pages",
 			"@routes": "src/routes",
 			"@widgets": "src/widgets",
-			"@shared": "src/shared"
+			"@shared": "src/shared",
+			"@images": "static/images"
 		},
 		files: {
 			appTemplate: "src/app/app.html",
