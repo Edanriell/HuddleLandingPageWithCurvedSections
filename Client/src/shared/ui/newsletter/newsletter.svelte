@@ -38,9 +38,14 @@
 			       type="email"
 			>
 			{#if $errors.email}
-				<span class="font-[var(--font-family)] font-normal text-[12rem] leading-[150%] text-red-500 mt-[4rem]">
+				<span class="absolute bottom-[-25rem] font-[var(--font-family)] font-semibold text-[12rem] leading-[200%] text-[#ff4343]">
 					{$errors.email}
 				</span>
+			{/if}
+			{#if $message}
+				<div class="absolute bottom-[-25rem] font-[var(--font-family)] font-semibold text-[12rem] leading-[200%] text-[#22c55e] desktop:bottom-[-50rem]">
+					Newsletter subscription successful! Check your email for confirmation.
+				</div>
 			{/if}
 		</div>
 		<Button
@@ -65,9 +70,4 @@
 			{$submitting ? 'Subscribing...' : 'Subscribe'}
 		</Button>
 	</form>
-	{#if $message}
-		<div class="mt-[16rem] font-[var(--font-family)] font-normal text-[14rem] leading-[150%] text-green-400">
-			Newsletter subscription successful! Check your email for confirmation.
-		</div>
-	{/if}
 </article>
