@@ -6,6 +6,8 @@
 
 	import {default as FooterMaskMobile} from "./footer-mask-mobile.svelte";
 	import {default as FooterMaskDesktop} from "./footer-mask-desktop.svelte";
+
+	let {data} = $props();
 </script>
 
 <footer class="bg-[#00252e] flex flex-col-reverse pt-[108rem] pb-[46rem] gap-y-[104rem] relative desktop:flex-row desktop:gap-x-[unset] desktop:gap-y-[unset] desktop:pt-[280rem] desktop:pb-[103rem] desktop:items-start desktop:justify-between">
@@ -18,6 +20,6 @@
 		<SocialLinks classes="ml-[-3rem]" />
 	</div>
 	<div class="ml-[28rem] mr-[28rem] desktop:ml-[unset] desktop:mr-[120rem] desktop:basis-[520rem]">
-		<Newsletter />
+		<Newsletter {data} />
 	</div>
 </footer>
