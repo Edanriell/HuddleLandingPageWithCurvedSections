@@ -6,7 +6,7 @@
 	import {Header} from "@widgets/header";
 	import {Footer} from "@widgets/footer";
 
-	let { children } = $props();
+	let { children, data } = $props();
 </script>
 
 <DefaultLayout>
@@ -14,5 +14,5 @@
 
 	{@render children()}
 
-	<Footer slot="footer"/>
+	<Footer {data} slot="footer"/>
 </DefaultLayout>
